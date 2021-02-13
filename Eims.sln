@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eims", "Eims\Eims.csproj", "{C8E5F4AB-3ABC-40DF-AF72-57D223E20093}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8E5F4AB-3ABC-40DF-AF72-57D223E20093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8E5F4AB-3ABC-40DF-AF72-57D223E20093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8E5F4AB-3ABC-40DF-AF72-57D223E20093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8E5F4AB-3ABC-40DF-AF72-57D223E20093}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
