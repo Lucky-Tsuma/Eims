@@ -84,6 +84,9 @@ namespace Eims
         private void frmProgram_Load(object sender, EventArgs e)
         {
             cboProgramCode.Visible = false;
+
+            gboSearch.Visible = false;
+            gboData.Visible = false;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -174,6 +177,79 @@ namespace Eims
                 }
                 connect.closeConnection();
             }
+        }
+
+        private void btnAdvSearch_Click(object sender, EventArgs e)
+        {
+            if (cboCriteria.Text == "")
+            {
+                MessageBox.Show("Ensure all fields are filled", "Eims Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboCriteria.Focus();
+            }
+            else if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Ensure all fields are filled", "Eims Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtSearch.Focus();
+            }
+            else
+            {
+                query = "";
+                if (cboCriteria.Text == "Program Code")
+                {
+                    query = "SELECT * FROM programme WHERE Prog_Code LIKE '" + "%" + txtSearch.Text.ToString() + "%" + "' ORDER BY Prog_Code ASC";
+                }
+                else if (cboCriteria.Text == "Program Name")
+                {
+                    query = "SELECT * FROM programme WHERE Prog_Name LIKE '" + "%" + txtSearch.Text.ToString() + "%" + "' ORDER BY Prog_Code ASC";
+                }
+                else if (cboCriteria.Text == "Dep_Code")
+                {
+                    query = "SELECT * FROM programme WHERE Dep_Code LIKE '" + "%" + txtSearch.Text.ToString() + "%" + "' ORDER BY Dep_Code ASC";
+                }
+                else if (cboCriteria.Text == "All")
+                {
+                    query = "SELECT * FROM programme ORDER BY Prog_Code ASC";
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Criteria! Please try again", "Eims Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cboCriteria.Focus();
+                }
+                if (query != "")
+                {
+                    Conn connect = new Conn();
+                    if (connect.openConnection() == true)
+                    {
+                        MySqlCommand cmd = new MySqlCommand(query, connect.connection);
+                        MySqlDataReader dataReader = cmd.ExecuteReader();
+                        //Read the data and store them in the list
+                        //this.cboUniversityCode.Items.Clear();
+                        this.dataGridView1.Rows.Clear();
+                        while (dataReader.Read())
+                        {
+                            if (dataReader["Prog_Code"].ToString().Replace(" ", "") != "")
+                            {
+                                string[] row = new string[] { dataReader["Prog_Code"].ToString(), dataReader["Prog_Name"].ToString(), dataReader["Duration"].ToString(), dataReader["Description"].ToString(), dataReader["Dep_Code"].ToString() };
+                                dataGridView1.Rows.Add(row);
+                            }
+                        }
+                        gboData.Visible = true;
+                        connect.closeConnection();
+
+                    }
+                }
+
+            }
+        }
+
+        private void btnAdvQuit_Click(object sender, EventArgs e)
+        {
+            gboSearch.Visible = false;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            gboSearch.Visible = true;
         }
     }
 }

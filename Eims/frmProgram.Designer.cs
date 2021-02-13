@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.gboMain = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtDuration = new System.Windows.Forms.TextBox();
+            this.cboProgramCode = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -43,16 +47,32 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cboProgramCode = new System.Windows.Forms.ComboBox();
-            this.txtDuration = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.gboSearch = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAdvQuit = new System.Windows.Forms.Button();
+            this.btnAdvSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboCriteria = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.gboData = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Program_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Program_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Faculty_Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gboMain.SuspendLayout();
+            this.gboSearch.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.gboData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gboMain
             // 
             this.gboMain.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gboMain.Controls.Add(this.gboSearch);
             this.gboMain.Controls.Add(this.label5);
             this.gboMain.Controls.Add(this.txtDuration);
             this.gboMain.Controls.Add(this.cboProgramCode);
@@ -79,6 +99,42 @@
             this.gboMain.TabStop = false;
             this.gboMain.Text = "Program Details";
             this.gboMain.Enter += new System.EventHandler(this.gboMain_Enter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(72, 18);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Duration";
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.Location = new System.Drawing.Point(258, 169);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(229, 20);
+            this.txtDuration.TabIndex = 13;
+            // 
+            // cboProgramCode
+            // 
+            this.cboProgramCode.FormattingEnabled = true;
+            this.cboProgramCode.Location = new System.Drawing.Point(258, 30);
+            this.cboProgramCode.Name = "cboProgramCode";
+            this.cboProgramCode.Size = new System.Drawing.Size(229, 21);
+            this.cboProgramCode.TabIndex = 12;
+            this.cboProgramCode.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(400, 271);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnNew
             // 
@@ -207,40 +263,140 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Program Code";
             // 
-            // btnSearch
+            // gboSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(400, 271);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 11;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.gboSearch.BackColor = System.Drawing.SystemColors.Highlight;
+            this.gboSearch.Controls.Add(this.gboData);
+            this.gboSearch.Controls.Add(this.groupBox1);
+            this.gboSearch.Controls.Add(this.txtSearch);
+            this.gboSearch.Controls.Add(this.cboCriteria);
+            this.gboSearch.Controls.Add(this.label6);
+            this.gboSearch.Controls.Add(this.label7);
+            this.gboSearch.Location = new System.Drawing.Point(50, 7);
+            this.gboSearch.Name = "gboSearch";
+            this.gboSearch.Size = new System.Drawing.Size(593, 206);
+            this.gboSearch.TabIndex = 15;
+            this.gboSearch.TabStop = false;
             // 
-            // cboProgramCode
+            // groupBox1
             // 
-            this.cboProgramCode.FormattingEnabled = true;
-            this.cboProgramCode.Location = new System.Drawing.Point(258, 30);
-            this.cboProgramCode.Name = "cboProgramCode";
-            this.cboProgramCode.Size = new System.Drawing.Size(229, 21);
-            this.cboProgramCode.TabIndex = 12;
-            this.cboProgramCode.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.groupBox1.Controls.Add(this.btnAdvQuit);
+            this.groupBox1.Controls.Add(this.btnAdvSearch);
+            this.groupBox1.Location = new System.Drawing.Point(91, 119);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(391, 69);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
             // 
-            // txtDuration
+            // btnAdvQuit
             // 
-            this.txtDuration.Location = new System.Drawing.Point(258, 169);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(229, 20);
-            this.txtDuration.TabIndex = 13;
+            this.btnAdvQuit.Location = new System.Drawing.Point(239, 28);
+            this.btnAdvQuit.Name = "btnAdvQuit";
+            this.btnAdvQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnAdvQuit.TabIndex = 1;
+            this.btnAdvQuit.Text = "Quit";
+            this.btnAdvQuit.UseVisualStyleBackColor = true;
+            this.btnAdvQuit.Click += new System.EventHandler(this.btnAdvQuit_Click);
             // 
-            // label5
+            // btnAdvSearch
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 171);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 18);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Duration";
+            this.btnAdvSearch.Location = new System.Drawing.Point(62, 28);
+            this.btnAdvSearch.Name = "btnAdvSearch";
+            this.btnAdvSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnAdvSearch.TabIndex = 0;
+            this.btnAdvSearch.Text = "Search";
+            this.btnAdvSearch.UseVisualStyleBackColor = true;
+            this.btnAdvSearch.Click += new System.EventHandler(this.btnAdvSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(200, 84);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(333, 20);
+            this.txtSearch.TabIndex = 3;
+            // 
+            // cboCriteria
+            // 
+            this.cboCriteria.FormattingEnabled = true;
+            this.cboCriteria.Items.AddRange(new object[] {
+            "All",
+            "Program Code",
+            "Program Name",
+            "Faculty Code"});
+            this.cboCriteria.Location = new System.Drawing.Point(200, 34);
+            this.cboCriteria.Name = "cboCriteria";
+            this.cboCriteria.Size = new System.Drawing.Size(333, 21);
+            this.cboCriteria.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(17, 80);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(160, 25);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Search Value:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(17, 30);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(177, 25);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Search Criteria:";
+            // 
+            // gboData
+            // 
+            this.gboData.BackColor = System.Drawing.SystemColors.Highlight;
+            this.gboData.Controls.Add(this.dataGridView1);
+            this.gboData.Location = new System.Drawing.Point(0, 12);
+            this.gboData.Name = "gboData";
+            this.gboData.Size = new System.Drawing.Size(593, 182);
+            this.gboData.TabIndex = 5;
+            this.gboData.TabStop = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Program_Code,
+            this.Program_Name,
+            this.Duration,
+            this.Description,
+            this.Faculty_Code});
+            this.dataGridView1.Location = new System.Drawing.Point(6, 11);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(581, 165);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Program_Code
+            // 
+            this.Program_Code.HeaderText = "Program Code";
+            this.Program_Code.Name = "Program_Code";
+            // 
+            // Program_Name
+            // 
+            this.Program_Name.HeaderText = "Program Name";
+            this.Program_Name.Name = "Program_Name";
+            // 
+            // Duration
+            // 
+            this.Duration.HeaderText = "Duration";
+            this.Duration.Name = "Duration";
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            // 
+            // Faculty_Code
+            // 
+            this.Faculty_Code.HeaderText = "Faculty Code";
+            this.Faculty_Code.Name = "Faculty_Code";
             // 
             // frmProgram
             // 
@@ -255,6 +411,11 @@
             this.Load += new System.EventHandler(this.frmProgram_Load);
             this.gboMain.ResumeLayout(false);
             this.gboMain.PerformLayout();
+            this.gboSearch.ResumeLayout(false);
+            this.gboSearch.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.gboData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,5 +441,20 @@
         private System.Windows.Forms.ComboBox cboProgramCode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDuration;
+        private System.Windows.Forms.GroupBox gboSearch;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnAdvQuit;
+        private System.Windows.Forms.Button btnAdvSearch;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cboCriteria;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.GroupBox gboData;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Program_Code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Program_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Duration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Faculty_Code;
     }
 }

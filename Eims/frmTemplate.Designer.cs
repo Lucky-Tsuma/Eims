@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.gboSearch = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboCriteria = new System.Windows.Forms.ComboBox();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAdvSearch = new System.Windows.Forms.Button();
             this.btnAdvQuit = new System.Windows.Forms.Button();
+            this.btnAdvSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.cboCriteria = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.gboData = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gboSearch.SuspendLayout();
@@ -58,15 +58,49 @@
             this.gboSearch.TabIndex = 0;
             this.gboSearch.TabStop = false;
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Search Criteria:";
+            this.groupBox1.BackColor = System.Drawing.SystemColors.GrayText;
+            this.groupBox1.Controls.Add(this.btnAdvQuit);
+            this.groupBox1.Controls.Add(this.btnAdvSearch);
+            this.groupBox1.Location = new System.Drawing.Point(91, 119);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(391, 69);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
+            // btnAdvQuit
+            // 
+            this.btnAdvQuit.Location = new System.Drawing.Point(239, 28);
+            this.btnAdvQuit.Name = "btnAdvQuit";
+            this.btnAdvQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnAdvQuit.TabIndex = 1;
+            this.btnAdvQuit.Text = "Quit";
+            this.btnAdvQuit.UseVisualStyleBackColor = true;
+            // 
+            // btnAdvSearch
+            // 
+            this.btnAdvSearch.Location = new System.Drawing.Point(62, 28);
+            this.btnAdvSearch.Name = "btnAdvSearch";
+            this.btnAdvSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnAdvSearch.TabIndex = 0;
+            this.btnAdvSearch.Text = "Search";
+            this.btnAdvSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(200, 84);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(333, 20);
+            this.txtSearch.TabIndex = 3;
+            // 
+            // cboCriteria
+            // 
+            this.cboCriteria.FormattingEnabled = true;
+            this.cboCriteria.Location = new System.Drawing.Point(200, 34);
+            this.cboCriteria.Name = "cboCriteria";
+            this.cboCriteria.Size = new System.Drawing.Size(333, 21);
+            this.cboCriteria.TabIndex = 2;
             // 
             // label2
             // 
@@ -78,48 +112,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Search Value:";
             // 
-            // cboCriteria
+            // label1
             // 
-            this.cboCriteria.FormattingEnabled = true;
-            this.cboCriteria.Location = new System.Drawing.Point(200, 34);
-            this.cboCriteria.Name = "cboCriteria";
-            this.cboCriteria.Size = new System.Drawing.Size(333, 21);
-            this.cboCriteria.TabIndex = 2;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(200, 84);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(333, 20);
-            this.txtSearch.TabIndex = 3;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnAdvQuit);
-            this.groupBox1.Controls.Add(this.btnAdvSearch);
-            this.groupBox1.Location = new System.Drawing.Point(91, 119);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 69);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnAdvSearch
-            // 
-            this.btnAdvSearch.Location = new System.Drawing.Point(62, 28);
-            this.btnAdvSearch.Name = "btnAdvSearch";
-            this.btnAdvSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnAdvSearch.TabIndex = 0;
-            this.btnAdvSearch.Text = "Search";
-            this.btnAdvSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnAdvQuit
-            // 
-            this.btnAdvQuit.Location = new System.Drawing.Point(239, 28);
-            this.btnAdvQuit.Name = "btnAdvQuit";
-            this.btnAdvQuit.Size = new System.Drawing.Size(75, 23);
-            this.btnAdvQuit.TabIndex = 1;
-            this.btnAdvQuit.Text = "Quit";
-            this.btnAdvQuit.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(177, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Search Criteria:";
             // 
             // gboData
             // 
